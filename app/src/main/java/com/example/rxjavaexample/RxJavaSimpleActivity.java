@@ -27,7 +27,7 @@ public class RxJavaSimpleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rx_java_simple);
 
-        Button btnServer = findViewById(R.id.serverBtn);
+        Button btnServer = findViewById(R.id.btnServer);
         btnServer.setOnClickListener(v -> {
             Toast.makeText(this, "Please wait a few seconds", Toast.LENGTH_SHORT).show();
             v.setEnabled(false);
@@ -46,7 +46,7 @@ public class RxJavaSimpleActivity extends AppCompatActivity {
     }
 
     private void updateUserInterface(String string) {
-        TextView tv = findViewById(R.id.resultView);
+        TextView tv = findViewById(R.id.tvResult);
         tv.setText(string);
     }
 

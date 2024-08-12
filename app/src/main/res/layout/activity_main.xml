@@ -2,34 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/rxSimple"
+        android:id="@+id/btnRxSimple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/rxsimpleActivity"
-        />
+        android:text="@string/rxsimpleActivity" />
 
     <Button
-        android:id="@+id/book"
+        android:id="@+id/btnBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bookActivity"
-        />
+        android:text="@string/bookActivity" />
 
     <Button
-        android:id="@+id/color"
+        android:id="@+id/btnColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/colorActivity"
-        />
+        android:text="@string/colorActivity" />
 
     <Button
-        android:id="@+id/scheduler"
+        android:id="@+id/btnScheduler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/schedulerActivity"
-        />
+        android:text="@string/schedulerActivity" />
+
+    <Button
+        android:id="@+id/btnFlowableExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/flowableExample" />
 </LinearLayout>

@@ -43,22 +43,21 @@ public class SchedulerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scheduler);
         progressBar = findViewById(R.id.progressBar);
         messageArea = findViewById(R.id.messageArea);
-        button  = findViewById(R.id.scheduleLongRunningOperation);
+        button  = findViewById(R.id.btnLongOperation);
         button.setOnClickListener(v -> Observable.fromCallable(callable).
                 subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).
                 doOnSubscribe(disposable ->
                         {
                             progressBar.setVisibility(View.VISIBLE);
                             button.setEnabled(false);
-                            String message = messageArea.getText().toString() + "\n" +"Progressbar visible" + "\n";
-                            messageArea.setText(message);
+                            messageArea.append("\n" +"Progressbar visible" + "\n");
                         }
                 ).
                 subscribe(getDisposableObserver()));
     }
 
     Callable<String> callable = () -> {
-        SystemClock.sleep(1000);
+        SystemClock.sleep(2000);
         return "Hello";
     };
 
@@ -67,28 +66,23 @@ public class SchedulerActivity extends AppCompatActivity {
 
             @Override
             public void onComplete() {
-                String messageComplete = messageArea.getText().toString() + "\n" + "OnComplete" + "\n";
-                messageArea.setText(messageComplete);
+                messageArea.append("\n" + "OnComplete: ");
                 progressBar.setVisibility(View.INVISIBLE);
                 button.setEnabled(true);
-                String messageProgressBar = messageArea.getText().toString()+ "\n" + "Hiding Progressbar";
-                messageArea.setText(messageProgressBar);
+                messageArea.append("Hiding Progressbar" + "\n");
             }
 
             @Override
             public void onError(Throwable e) {
-                String messageError = messageArea.getText().toString() + "\n" +"OnError" + "\n";
-                messageArea.setText(messageError);
+                messageArea.append("\n" +"OnError: " + "\n");
                 progressBar.setVisibility(View.INVISIBLE);
                 button.setEnabled(true);
-                String messageProgressBar = messageArea.getText().toString() + "\n" + "Hiding Progressbar" +"\n" ;
-                messageArea.setText(messageProgressBar);
+                messageArea.append("Hiding Progressbar" + "\n");
             }
 
             @Override
             public void onNext(String message) {
-                String messageOnNext = messageArea.getText().toString() + "\n" +"onNext" + "\n" +message;
-                messageArea.setText(messageOnNext);
+                messageArea.append("\n" +"onNext: " + message + "\n");
             }
         };
     }

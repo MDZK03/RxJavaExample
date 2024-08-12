@@ -13,16 +13,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnFirst = findViewById(R.id.rxSimple);
+        Button btnFirst = findViewById(R.id.btnRxSimple);
         btnFirst.setOnClickListener(v -> startActivity(new Intent(this, RxJavaSimpleActivity.class)));
 
-        Button btnSecond = findViewById(R.id.color);
+        Button btnSecond = findViewById(R.id.btnColor);
         btnSecond.setOnClickListener(v -> startActivity(new Intent(this, ColorsActivity.class)));
 
-        Button btnThird = findViewById(R.id.book);
+        Button btnThird = findViewById(R.id.btnBook);
         btnThird.setOnClickListener(v -> startActivity(new Intent(this, BooksActivity.class)));
 
-        Button btnScheduler = findViewById(R.id.scheduler);
+        Button btnScheduler = findViewById(R.id.btnScheduler);
         btnScheduler.setOnClickListener(v -> startActivity(new Intent(this, SchedulerActivity.class)));
+
+        Button btnFlowable = findViewById(R.id.btnFlowableExample);
+        btnFlowable.setOnClickListener(v -> startActivity(new Intent(this, FlowableExampleActivity.class)));
     }
 }

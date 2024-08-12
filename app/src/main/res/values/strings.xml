@@ -9,4 +9,6 @@
     <string name="bookActivity">BookActivity</string>
     <string name="colorActivity">ColorActivity</string>
     <string name="schedulerActivity">SchedulerActivity</string>
+    <string name="do_some_work">Do Some Work</string>
+    <string name="flowableExample">FlowableExample</string>
 </resources>
