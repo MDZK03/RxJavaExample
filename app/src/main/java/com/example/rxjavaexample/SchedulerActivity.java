@@ -66,7 +66,7 @@ public class SchedulerActivity extends AppCompatActivity {
 
             @Override
             public void onComplete() {
-                messageArea.append("\n" + "OnComplete: ");
+                messageArea.append("\n" + "onComplete: ");
                 progressBar.setVisibility(View.INVISIBLE);
                 button.setEnabled(true);
                 messageArea.append("Hiding Progressbar" + "\n");
@@ -82,7 +82,7 @@ public class SchedulerActivity extends AppCompatActivity {
 
             @Override
             public void onNext(String message) {
-                messageArea.append("\n" +"onNext: " + message + "\n");
+                messageArea.append("\n" + "onNext: " + message + "\n");
             }
         };
     }
